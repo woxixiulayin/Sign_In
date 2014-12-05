@@ -1,0 +1,9 @@
+#/bin/bash
+#echo "mongod --dbpath ~/gitlib/SiginIn/SiginDB"
+#~/下载/mongodb-linux-x86_64-2.6.5/bin/mongod --dbpath ~/gitlib/SiginIn/SiginDB
+
+
+echo "设置meteor的默认数据库在/localhost:27017/siginDB上"
+export MONGO_URL=mongodb://localhost:27017/siginDB
+echo "mongod --dbpath ~/gitlib/SiginIn/sigin_meteor/.meteor/local"
+~/下载/mongodb-linux-x86_64-2.6.5/bin/mongod --dbpath ~/gitlib/SiginIn/sigin_meteor/.meteor/local

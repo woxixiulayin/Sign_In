@@ -1,0 +1,105 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".MainActivity" 
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="考  勤"
+        android:textSize="40dp"
+        android:textColor="@color/whitesmoke"
+        android:background="@color/navy"
+        />
+    
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black">
+        </LinearLayout>
+       <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/whitesmoke">
+        </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:background="@color/brown">
+        
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/first_sign"
+            android:gravity="center"
+            android:text="首次打卡\n无"
+            style="@style/sign_text"/>
+        <LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/darkgray">
+            </LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/last_sign"
+            android:gravity="center"
+            android:text="上次打卡\n无"
+            style="@style/sign_text"/>
+        </LinearLayout>
+        
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:gravity="center">
+        <Button
+            android:layout_width="135dp"
+            android:layout_height="135dp"
+            android:gravity="center"
+            android:text="大拇哥\n快来呀"
+            android:textSize="30dp"
+            android:clickable="true"
+            android:onClick="ActionSign"           
+            />
+        </LinearLayout>
+        
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black">
+        </LinearLayout>
+       <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/whitesmoke">
+        </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:background="@color/darkgrey">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="注册"
+            android:clickable="true"
+            android:onClick="ActionRegister"             
+            />
+        </LinearLayout>
+        
+</LinearLayout>

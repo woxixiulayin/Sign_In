@@ -1,0 +1,97 @@
+<head>
+  <title>员工考勤系统</title>
+</head>
+
+<body>
+	{{> view}}
+
+</body>
+
+<template name="view">
+	{{> Template.dynamic template=view}}
+</template>
+
+<template name="viewall">
+<div class="container">
+    <header align="center">
+      <h1>考勤系统</h1>
+    </header>
+
+    <table border="1" style="margin:auto">
+    <caption>今日考勤信息</caption>
+	<colgroup span="2" align="left"></colgroup>
+  	<colgroup align="right" style="color:#00FFFF;"></colgroup>
+  	<tr>
+		<th>name</th>
+		<th>ID</th>
+		<th>首次打卡</th>
+		<th>上次打卡</th>
+		<th>间隔时间</th>
+		<th>历史记录</th>
+  	</tr>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </table>
+  </div>
+</template>
+<template name="task">
+	<tr>
+		<td align="center">{{name}}</td>
+		<td align="center">{{id}}</td>
+		{{#if DutyToday}}
+			{{#each DutyToday}}
+				{{#if this}}
+					<td align="center">{{this}}</td>
+				{{/if}}
+			{{/each}}
+		{{else}}
+		<td align="center">无</td>
+		<td align="center">无</td>
+		<td align="center">无</td>
+		{{/if}}	
+		<td align="center"><button class="checkhistory">查看</button></td>		
+	</tr>
+</template>
+
+<template name="viewhistory">
+<div class="container">
+    <header align="center">
+      <h1>考勤系统</h1>
+    </header>
+	<button class="back">返回</button>
+    <table border="1" cellpadding="3" cellspacing="0" style="width: 60%;margin:auto">
+    <caption>{{name}}历史考勤记录</caption>
+	<colgroup span="2" align="left"></colgroup>
+  	<colgroup align="right" style="color:#00FFFF;"></colgroup>
+  	<tr>
+		<th align="center">日期</th>
+		<th align="center">上班时间</th>
+		<th align="center" >下班时间</th>
+		<th align="center">总时间</th>
+  	</tr>
+	
+	{{#if DutyHistory}}
+			{{#each DutyHistory}}
+			<tr>
+				{{#each this}}
+					{{#if this}}
+					<td align="center">{{this}}</td>
+					{{else}}
+					<td align="center">无</td>
+					{{/if}}
+				{{/each}}
+			</tr>
+			{{/each}}
+		{{else}}
+		<tr>
+		<td align="center">无</td>
+		<td align="center">无</td>
+		<td align="center">无</td>
+		<td align="center">无</td>
+		</tr>
+		{{/if}}	
+    </table>
+  </div>
+
+</template>
